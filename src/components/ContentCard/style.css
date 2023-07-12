@@ -1,0 +1,25 @@
+.javi-content-card {
+  position: relative;
+  min-width: 170px;
+  max-width: 550px;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    .overlay {
+      font-size: 70px;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*  background-color: rgba(0, 0, 0, 0.5); */
+    color: #fff;
+    padding: 10px;
+    font-size: 60px;
+    z-index: 1;
+  }
+}

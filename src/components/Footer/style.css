@@ -1,0 +1,9 @@
+.javi-footer {
+  height: 50px;
+  background-color: #111111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
