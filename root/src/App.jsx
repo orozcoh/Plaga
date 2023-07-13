@@ -11,7 +11,22 @@ import { Contact } from "./views/Contact";
 import { NotFound } from "./views/NotFound";
 import { Root } from "./views/Root";
 
+import { contentDb } from "./data/db";
+
 function App() {
+  const filmContent = contentDb.content.filter(
+    (item) => item.category === "films"
+  );
+  const commercialsContent = contentDb.content.filter(
+    (item) => item.category === "commercials"
+  );
+  const musicVideosContent = contentDb.content.filter(
+    (item) => item.category === "music-videos"
+  );
+  const photographyContent = contentDb.content.filter(
+    (item) => item.category === "photography"
+  );
+
   return (
     <div>
       <div style={{ height: "5vh", marginBottom: "15px" }}>
@@ -22,19 +37,36 @@ function App() {
           <Route path="/" element={<Root className="javi-category-tab" />} />
           <Route
             path="/films"
-            element={<Films className="javi-category-tab" />}
+            element={
+              <Films contentData={filmContent} className="javi-category-tab" />
+            }
           />
           <Route
             path="/commercials"
-            element={<Commercials className="javi-category-tab" />}
+            element={
+              <Commercials
+                contentData={commercialsContent}
+                className="javi-category-tab"
+              />
+            }
           />
           <Route
             path="/music-videos"
-            element={<MusicVideos className="javi-category-tab" />}
+            element={
+              <MusicVideos
+                contentData={musicVideosContent}
+                className="javi-category-tab"
+              />
+            }
           />
           <Route
             path="/photography"
-            element={<Photography className="javi-category-tab" />}
+            element={
+              <Photography
+                contentData={photographyContent}
+                className="javi-category-tab"
+              />
+            }
           />
           <Route
             path="/about"

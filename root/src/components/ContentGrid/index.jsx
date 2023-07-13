@@ -7,13 +7,9 @@ export const ContentGrid = ({ contentDb }) => {
   return (
     <>
       <div className="javi-content-grid">
-        <ContentCard contentData={contentDb["content-1"]} />
-        <ContentCard contentData={contentDb["content-2"]} />
-        <ContentCard contentData={contentDb["content-3"]} />
-        <ContentCard contentData={contentDb["content-3"]} />
-        <ContentCard contentData={contentDb["content-2"]} />
-        <ContentCard contentData={contentDb["content-1"]} />
-        <ContentCard contentData={contentDb["content-3"]} />
+        {contentDb.map((element, index) => {
+          return <ContentCard key={"cards" + index} contentData={element} />;
+        })}
       </div>
     </>
   );

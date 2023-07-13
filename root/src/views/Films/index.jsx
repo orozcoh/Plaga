@@ -1,19 +1,18 @@
 import PropTypes from "prop-types";
 import { ContentGrid } from "../../components/ContentGrid";
-import { contentDb } from "../../data/db";
 
-export const Films = ({ className }) => {
+export const Films = ({ className, contentData }) => {
   return (
     <div
       className={className}
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <ContentGrid contentDb={contentDb} />
+      <ContentGrid contentDb={contentData} />
     </div>
   );
 };
 
 Films.propTypes = {
   className: PropTypes.string,
-  contentData: PropTypes.any,
+  contentData: PropTypes.array,
 };

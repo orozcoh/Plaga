@@ -1,6 +1,7 @@
 import Modal from "react-bootstrap/Modal";
 import PropTypes from "prop-types";
 import "./style.css";
+import YoutubePlayer from "../YoutubePlayer";
 
 export const ContentModal = ({ isOpen, setIsOpen, contentData }) => {
   const {
@@ -22,28 +23,12 @@ export const ContentModal = ({ isOpen, setIsOpen, contentData }) => {
         onHide={() => setIsOpen(false)}
         centered
       >
-        {/*         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header> */}
-        <Modal.Body style={{ minHeight: "30vh" }}>
-          <div>
-            <iframe
-              width="100%"
-              height="410px"
-              src={`https://www.youtube.com/embed/${videoId}`}
-              title="YouTube Video"
-              //frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
+        <Modal.Body>
+          <YoutubePlayer videoId={videoId} />
         </Modal.Body>
-        <Modal.Footer style={{ minHeight: "60vh" }}>
+        <Modal.Footer>
           <div>
-            <p>
-              <h4>{name}</h4>
-            </p>
+            <h4>{name}</h4>
             <p>
               <span className="subtitle">Platform: </span>
               <span>{platform}</span>

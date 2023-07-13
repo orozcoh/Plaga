@@ -16,8 +16,4 @@
   .subtitle {
     font-weight: 900;
   }
-
-  &iframe {
-    z-index: 0;
-  }
 }
